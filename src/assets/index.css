@@ -5,10 +5,15 @@
 
 * {
     box-sizing: border-box;
-    color: #400611;
+    /* color: #400611; */
     font-family: "Montserrat", sans-serif;
+    scroll-behavior: smooth; /* Add this line */
 }
 
+body {
+    color: #400611;
+    
+}
 .pinyon-regular {
     font-family: "Pinyon Script", cursive;
     font-style: normal;

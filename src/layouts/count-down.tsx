@@ -1,6 +1,11 @@
 import { useState, useEffect } from "react";
+import service from "../service";
+import useGetParams from "../hooks/use-get-params";
+import { Button } from "antd";
+import { CalendarOutlined } from "@ant-design/icons";
 
 export default function CountDown() {
+  const params = useGetParams();
   const calculateTimeLeft = () => {
     const targetDate = new Date("2024-09-01T08:00:00"); // Set your target date here
     const now = new Date();
@@ -35,6 +40,15 @@ export default function CountDown() {
     return () => clearInterval(timer);
   }, []);
 
+  const storeToDB = () => {
+    service.post("/save-calendar", {
+      name: params.name,
+      clicked: true
+    }).then((res) => {
+      console.log(res);
+    })
+  }
+
   const handleSaveToCalendar = () => {
     const targetDate = new Date("2024-09-01T09:00:00");
     const event = {
@@ -50,6 +64,7 @@ export default function CountDown() {
       ""
     )}`;
 
+    storeToDB();
     window.open(calendarUrl, "_blank");
   };
 
@@ -89,12 +104,11 @@ export default function CountDown() {
               <p className="text-[10px] text-white">Seconds</p>
             </div>
           </div>
-          <button
-            className="bg-[#8A4041] text-white py-1 px-2 rounded border shadow-md text-[10px] my-5"
-            onClick={handleSaveToCalendar}
+          <Button type="primary" shape="round" size="small" onClick={handleSaveToCalendar}
+          icon={<CalendarOutlined />} className="mt-3"
           >
-            Save to Calendar
-          </button>
+            <p className="text-white text-[10px]">Save to Calendar</p>
+            </Button>
         </div>
       </div>
     </div>

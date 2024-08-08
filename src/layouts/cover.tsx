@@ -1,4 +1,7 @@
+import useGetParams from "../hooks/use-get-params";
+
 export default function Cover() {
+  const params = useGetParams();
   return (
     <div className="bg-cover-int h-screen bg-center bg-cover relative overflow-hidden">
       <img
@@ -37,7 +40,7 @@ export default function Cover() {
           <p className="font-pinyon text-2xl my-4 text-white">Rahma & Ridho</p>
           <p className="font-semibold text-white">DEAR :</p>
           <p className=" text-2xl  my-3 bg-opacity-20 rounded text-white">
-            Nama Tamu
+            {params.name}
           </p>
           <p className="text-[12px] max-w-[190px] text-center text-white">
             Please be a part of our happiest moment

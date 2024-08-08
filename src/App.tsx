@@ -3,10 +3,13 @@ import Alamat from "./layouts/alamat";
 import AyatQuran from "./layouts/ayat";
 import CountDown from "./layouts/count-down";
 import Cover from "./layouts/cover";
+import Footer from "./layouts/footer";
 import Gift from "./layouts/gift";
 import Intro from "./layouts/intro";
 import Mempelai from "./layouts/mempelai";
 import Rundown from "./layouts/rundown";
+import Saythanks from "./layouts/saythanks";
+import Ucapan from "./layouts/ucapan";
 
 function App() {
   return (
@@ -21,6 +24,9 @@ function App() {
           <Rundown />
           <Alamat />
           <Gift />
+          <Ucapan />
+          <Saythanks />
+          <Footer />
         </div>
       </div>
     </Theming>
