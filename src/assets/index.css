@@ -6,12 +6,12 @@
 * {
     box-sizing: border-box;
     /* color: #400611; */
-    font-family: "Montserrat", sans-serif;
+    font-family: "Cormorant Upright", sans-serif;
     scroll-behavior: smooth; /* Add this line */
 }
 
 body {
-    color: #400611;
+    color: #7E4B5E;
     
 }
 .pinyon-regular {

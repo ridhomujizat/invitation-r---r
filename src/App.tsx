@@ -14,19 +14,22 @@ import Ucapan from "./layouts/ucapan";
 function App() {
   return (
     <Theming>
-      <div className="flex justify-center items-center h-screen bg-[#976C75]">
-        <div className=" aspect-[414/697]  h-full bg-white image-current overflow-y-auto">
-          <Cover />
-          <Intro />
-          <AyatQuran />
-          <Mempelai />
-          <CountDown />
-          <Rundown />
-          <Alamat />
-          <Gift />
-          <Ucapan />
-          <Saythanks />
-          <Footer />
+      <div className="flex justify-end items-center h-screen ">
+        <div className="aspect-[414/697] h-full image-current bg-white overflow-y-auto overflow-x-hidden relative  bg-current bg-cover bg-center bg-opacity-30">
+          <div className="z-10 relative">
+            <Cover />
+            <Intro />
+            <AyatQuran />
+            <Mempelai />
+            {/* <CountDown /> */}
+            <Rundown />
+            <Alamat />
+            <Gift />
+            <Ucapan />
+            <Saythanks />
+            <Footer />
+          </div>
+          <div className="fixed top-0 left-0 w-full h-full bg-white bg-opacity-70"></div>
         </div>
       </div>
     </Theming>

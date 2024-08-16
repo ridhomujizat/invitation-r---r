@@ -1,4 +1,5 @@
 import React from "react";
+import Card from "../components/card";
 
 // export default function AyatQuran() {
 //   return (
@@ -29,14 +30,22 @@ import React from "react";
 
 export default function AyatQuran() {
   return (
-    <div className="bg-[#976C74] px-7 py-20 ">
-        {/* <img src="/r-r.webp" alt="Rahma & Ridho" className="w-[200px] h-[200px] mx-auto aspect-square" /> */}
-      <p className="text-white text-sm text-center">
-        “ Dan di antara tanda-tanda (kebesaran) -Nya adalah Dia menciptakan
-        pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan
-        merasa tenteram kepadanya "
-      </p>
-      <p className="text-white text-sm text-center mt-5">(QS. Ar-Rum: 21)</p>
+    <div className="px-7 mt-20">
+      <Card>
+        <div className=" px-3 py-5">
+          {/* <img src="/r-r.webp" alt="Rahma & Ridho" className="w-[200px] h-[200px] mx-auto aspect-square" /> */}
+          <p className=" text-opacity-20 text-sm text-center text">
+            "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan
+            pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung
+            dan merasa tenteram kepadanya, dan Dia menjadikan diantaramu rasa
+            kasih dan sayang. Sungguh, pada yang demikian itu benar-benar
+            terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir."
+          </p>
+          <p className=" text-opacity-20 text-sm text-center mt-5">
+            (QS. Ar-Rum: 21)
+          </p>
+        </div>
+      </Card>
     </div>
   );
 }
