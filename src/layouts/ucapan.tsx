@@ -57,7 +57,7 @@ export default function Ucapan() {
       });
   };
   return (
-    <div className=" py-20 px-8 gap-5 flex flex-col items-center justify-center text-center bg-cover bg-center bg-river">
+    <div className=" py-20 px-8 gap-5 flex flex-col items-center justify-center text-center bg-cover bg-center ">
       <h2 className="text-xl ">Wedding Wish</h2>
       <div className="flex flex-col gap-2 w-[90%]">
         <Input

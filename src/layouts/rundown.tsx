@@ -1,4 +1,6 @@
 import { useSpring, animated } from "react-spring";
+import CountDown from "./count-down";
+import Alamat from "./alamat";
 
 export default function Rundown() {
   return (
@@ -13,29 +15,26 @@ export default function Rundown() {
         style={{
           backgroundImage: "url('texture.png')",
           backgroundPosition: "center top",
-          minHeight: "200vh",
+          paddingBottom: "10rem",
         }}
       >
-        <div className="sticky top-0 z-10 ">
+        <div className="sticky top-5 z-[1000] ">
+          <img src="gapura.png" alt="rundown" style={{ scale: "1.2" }} />
           <img
-            src="gapura.png"
-            alt="rundown"
-            className="h-[100vh] w-[100vw] object-contain"
-            style={{ objectFit: "cover", scale: 1.1 }}
+            src="Gunungan.png"
+            className="absolute z-[5] h-[22rem] left-[-5rem] top-[-1rem]"
           />
           <img
             src="Gunungan.png"
-            className="absolute z-[5] h-[22rem] left-[-4rem] top-[2rem]"
-          />
-          <img
-            src="Gunungan.png"
-            className="absolute z-[5] h-[22rem] right-[-4rem] top-[2rem]"
+            className="absolute z-[5] h-[22rem] right-[-5rem] top-[-1rem]"
             style={{ transform: "rotateY(180deg)" }}
           />
         </div>
         <div className="mt-[-15rem]">
           <div className=" flex flex-col justify-center items-center w-full">
-            <p className="text-xl text-milonga font-semibold border-b border-primary">Akad Nikah</p>
+            <p className="text-xl text-milonga font-semibold border-b border-primary">
+              Akad Nikah
+            </p>
             <div className="flex justify-center divide-x w-[80%] divide-primary items-center mt-4">
               <div className="text-center flex-1">
                 <p className="">Minggu</p>
@@ -51,7 +50,9 @@ export default function Rundown() {
             <p className=" mt-3">Pukul 08.00 WIB - Selesai</p>
           </div>
           <div className=" flex flex-col justify-center items-center w-full">
-            <p className="text-xl text-milonga font-semibold mt-10 border-b border-primary">Resepsi</p>
+            <p className="text-xl text-milonga font-semibold mt-10 border-b border-primary">
+              Resepsi
+            </p>
             <div className="flex justify-center divide-x w-[80%] divide-primary items-center mt-4">
               <div className="text-center flex-1">
                 <p className="">Minggu</p>
@@ -66,6 +67,8 @@ export default function Rundown() {
             </div>
             <p className=" mt-3">Pukul 13.00 WIB - 16.00 WIB</p>
           </div>
+          <CountDown />
+          <Alamat />
         </div>
       </div>
     </div>

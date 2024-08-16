@@ -23,7 +23,6 @@ function App() {
             <Mempelai />
             {/* <CountDown /> */}
             <Rundown />
-            <Alamat />
             <Gift />
             <Ucapan />
             <Saythanks />

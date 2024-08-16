@@ -69,39 +69,24 @@ export default function CountDown() {
   };
 
   return (
-    <div className="bg-primary px-10 py-10">
-      <div className="bg-current bg-center bg-cover overflow-hidden rounded-xl relative h-[400px]">
-        <div
-          className="absolute top-0 left-0 w-full h-full bg-opacity-50 bg-[#E4DBD6]"
-          style={{
-            backgroundSize: "inherit",
-            scale: 1.5,
-            zIndex: 1,
-          }}
-        ></div>
-        <div className="absolute top-0 left-0 w-full z-10 flex flex-col justify-center items-center">
-          <img
-            src="/r-r.webp"
-            alt="Rahma & Ridho"
-            className="w-[200px] h-[200px] mx-auto aspect-square opacity-80"
-          />
-          <p className="font-semibold text-xl ">Count Down</p>
-          <div className="flex items-center space-x-2 gap-1 mt-2 ">
-            <div className="flex flex-col items-center text-center bg-primary p-2 rounded min-w-[59px] min-h-[59px]">
-              <p className="text-lg font-semibold text-white">{timeLeft.days}</p>
-              <p className="text-[10px] text-white">Days</p>
+    <div className="">
+        <div className=" w-full z-10 flex flex-col justify-center items-center">
+          <div className="flex items-center space-x-2 gap-1 mt-12 ">
+            <div className="flex flex-col items-center text-center border border-primary rounded min-w-[40px] min-h-[40px]">
+              <p className="text-lg font-semibold ">{timeLeft.days}</p>
+              <p className="text-[10px] ">Days</p>
             </div>
-            <div className="flex flex-col items-center text-center bg-primary p-2 rounded min-w-[59px] min-h-[59px]">
-              <p className="text-lg font-semibold text-white">{timeLeft.hours}</p>
-              <p className="text-[10px] text-white">Hours</p>
+            <div className="flex flex-col items-center text-center border border-primary rounded min-w-[40px] min-h-[40px]">
+              <p className="text-lg font-semibold ">{timeLeft.hours}</p>
+              <p className="text-[10px] ">Hours</p>
             </div>
-            <div className="flex flex-col items-center text-center bg-primary p-2 rounded min-w-[59px] min-h-[59px]">
-              <p className="text-lg font-semibold text-white">{timeLeft.minutes}</p>
-              <p className="text-[10px] text-white">Minutes</p>
+            <div className="flex flex-col items-center text-center border border-primary rounded min-w-[40px] min-h-[40px]">
+              <p className="text-lg font-semibold ">{timeLeft.minutes}</p>
+              <p className="text-[10px] ">Minutes</p>
             </div>
-            <div className="flex flex-col items-center text-center bg-primary p-2 rounded min-w-[59px] min-h-[59px]">
-              <p className="text-lg font-semibold text-white">{timeLeft.seconds}</p>
-              <p className="text-[10px] text-white">Seconds</p>
+            <div className="flex flex-col items-center text-center border border-primary rounded min-w-[40px] min-h-[40px]">
+              <p className="text-lg font-semibold ">{timeLeft.seconds}</p>
+              <p className="text-[10px] ">Seconds</p>
             </div>
           </div>
           <Button type="primary" shape="round" size="small" onClick={handleSaveToCalendar}
@@ -110,7 +95,6 @@ export default function CountDown() {
             <p className="text-white text-[10px]">Save to Calendar</p>
             </Button>
         </div>
-      </div>
     </div>
   );
 }
