@@ -17,37 +17,37 @@ export default function Rundown() {
             <p className="text-xl text-milonga">Akad Nikah</p>
             <div className="flex justify-center divide-x w-[80%] divide-primary items-center mt-4">
               <div className="text-center flex-1">
-                <p className="text-[12px]">Minggu</p>
+                <p className="">Minggu</p>
               </div>
               <div className="text-center px-4">
                 <p className=" text-milonga font-semibold text-xl">01</p>
-                {/* <p className="text-[12px]">2024</p> */}
+                {/* <p className="">2024</p> */}
               </div>
               <div className="text-center h-full flex justify-center items-center flex-1">
-                <p className="text-[12px]">September</p>
+                <p className="">September</p>
               </div>
             </div>
-            <p className="text-[12px] mt-3">Pukul 08.00 WIB - Selesai</p>
+            <p className=" mt-3">Pukul 08.00 WIB - Selesai</p>
           </div>
           <div className=" flex flex-col justify-center items-center w-full">
             <p className="text-xl text-milonga">Resepsi</p>
             <div className="flex justify-center divide-x w-[80%] divide-primary items-center mt-4">
               <div className="text-center flex-1">
-                <p className="text-[12px]">Minggu</p>
+                <p className="">Minggu</p>
               </div>
               <div className="text-center px-4">
                 <p className=" text-milonga font-semibold text-xl">01</p>
-                {/* <p className="text-[12px]">2024</p> */}
+                {/* <p className="">2024</p> */}
               </div>
               <div className="text-center h-full flex justify-center items-center flex-1">
-                <p className="text-[12px]">September</p>
+                <p className="">September</p>
               </div>
             </div>
-            <p className="text-[12px] mt-3">Pukul 13.00 WIB - 16.00 WIB</p>
+            <p className=" mt-3">Pukul 13.00 WIB - 16.00 WIB</p>
           </div>
-          {/* <p className="text-[12px] mt-3">Pukul 08.00 WIB - 13.00 WIB</p>
+          {/* <p className=" mt-3">Pukul 08.00 WIB - 13.00 WIB</p>
           <p className="text-md font-milonga mt-5">Lokasi Acara</p>
-          <p className=" text-[12px] text-center">
+          <p className="  text-center">
             KP. KEBON KOPI RT/RW 002/001 NO 62, Ds, Sukadami, Cikarang Sel.,
             Kabupaten Bekasi, Jawa Barat 17530
           </p> */}

@@ -119,7 +119,7 @@ export default function Ucapan() {
                   <ClockCircleOutlined />
                   <p>{moment(item?.date).fromNow()}</p>
                 </div>
-                <p className=" text-left text-[12px]">{item?.ucapan}</p>
+                <p className=" text-left ">{item?.ucapan}</p>
               </div>
             ))}
           </div>

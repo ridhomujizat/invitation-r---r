@@ -59,7 +59,7 @@ export default function Gift() {
         ></div> */}
         <div className="absolute top-0 left-0 w-full z-10 flex flex-col justify-center items-center h-full gap-2">
           <p className=" text-center">Tanda Kasih</p>
-          <p className=" text-center text-[12px] w-[80%]">
+          <p className=" text-center  w-[80%]">
             Doa Restu Anda merupakan karunia yang sangat berarti bagi kami.
           </p>
           <div className="flex gap-2 items-center">

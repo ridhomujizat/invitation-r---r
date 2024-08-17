@@ -4,11 +4,13 @@ export default function Intro() {
       <img
         src="Gunungan.png"
         className="absolute z-[5] h-[22rem] left-[-4rem] top-[1rem]"
+        data-aos="fade-right"
       />
       <img
         src="Gunungan.png"
         className="absolute z-[5] h-[22rem] right-[-4rem] top-[1rem]"
         style={{ transform: "rotateY(180deg)" }}
+        data-aos="fade-right"
       />
       <img
         src="flower.png"

@@ -1,3 +1,6 @@
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import Theming from "./components/theming";
 import Alamat from "./layouts/alamat";
 import AyatQuran from "./layouts/ayat";
@@ -10,14 +13,37 @@ import Mempelai from "./layouts/mempelai";
 import Rundown from "./layouts/rundown";
 import Saythanks from "./layouts/saythanks";
 import Ucapan from "./layouts/ucapan";
+import useUIStore from "./store/useUiStore";
+import CoverHidden from "./layouts/cover-hidden";
 
 function App() {
+  const { openCover } = useUIStore((s) => s);
+
+  useEffect(() => {
+    if (!openCover) return;
+    AOS.init({
+      once: true, // Whether animation should happen only once
+    });
+    const contentElement = document.getElementById("content");
+    if (contentElement) {
+      contentElement.scrollBy({
+        top: window.innerHeight,
+        behavior: "smooth",
+      });
+    }
+  }, [openCover]);
+
   return (
     <Theming>
       <div className="flex justify-end items-center h-screen ">
-        <div className="aspect-[414/697] h-full image-current bg-white overflow-y-auto overflow-x-hidden relative  bg-current bg-cover bg-center bg-opacity-30">
+        <Cover />
+
+        <div
+          id="content"
+          className="aspect-[414/697] h-full image-current bg-white overflow-y-auto overflow-x-hidden relative  bg-current bg-cover bg-center bg-opacity-30"
+        >
           <div className="z-10 relative">
-            <Cover />
+            <CoverHidden />
             <Intro />
             <AyatQuran />
             <Mempelai />

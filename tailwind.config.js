@@ -18,6 +18,20 @@ export default {
       colors: {
         primary: "#976C74",
       },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        zoomInCover: {
+          '0%': { transform: 'scale(1.5)', opacity: '0' },
+          '100%': { transform: 'scale(1.1)', opacity: '1' },
+        },
+      },
+      animation: {
+        fadeIn: 'fadeIn 2s ease-in-out ',
+        zoomInCover: 'zoomInCover 1s ease-in-out',
+      },
     },
   },
   plugins: [],

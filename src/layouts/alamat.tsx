@@ -60,7 +60,7 @@ export default function Alamat() {
           <p className="text-sm text-milonga mt-5 font-semibold">
             Boemi Prasasti
           </p>
-          <p className="text-[12px] mt-3 text-center w-[80%]">
+          <p className=" mt-3 text-center w-[80%]">
             KP. Kebon Kopi RT/RW 002/001 NO 62, Ds, Sukadami, Cikarang Sel.,
             Kabupaten Bekasi, Jawa Barat 17530
           </p>
