@@ -33,7 +33,7 @@ export default function Mempelai() {
   });
 
   return (
-    <div className="mt-20 flex flex-col items-center justify-center gap-20 text-center ">
+    <div className="my-20 pb-20 flex flex-col items-center justify-center gap-20 text-center ">
       <div className="flex flex-col justify-center items-center gap-4  px-8">
         <Fade direction="up">
           <p className=" text-xl font-semibold border-b border-primary">

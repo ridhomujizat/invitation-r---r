@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { useState } from "react";
 import useGetParams from "../hooks/use-get-params";
 import useUIStore from "../store/useUiStore";
@@ -9,6 +10,22 @@ export default function Cover() {
 
   const handleOpenCover = () => {
     setOpenCover(!openCover);
+    const docElement = document.documentElement;
+    if (docElement?.requestFullscreen) {
+      docElement?.requestFullscreen();
+      // @ts-ignore
+    } else if (docElement?.mozRequestFullScreen) { /* Firefox */
+      // @ts-ignore
+      docElement?.mozRequestFullScreen();
+      // @ts-ignore
+    } else if (docElement?.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+      // @ts-ignore
+      docElement?.webkitRequestFullscreen();
+      // @ts-ignore
+    } else if (docElement?.msRequestFullscreen) { /* IE/Edge */
+      // @ts-ignore
+      docElement?.msRequestFullscreen();
+    }
   };
 
   return (

@@ -1,6 +1,4 @@
 import { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import Theming from "./components/theming";
 import Alamat from "./layouts/alamat";
 import AyatQuran from "./layouts/ayat";
@@ -21,18 +19,29 @@ function App() {
 
   useEffect(() => {
     if (!openCover) return;
+    const contentElement = document.getElementById("content");
+    const buttonCalender = document.getElementById("calender-button-absolut");
+
+    contentElement.addEventListener("scroll", (e) => {
+      if (contentElement.scrollTop > 2515) {
+        buttonCalender?.classList.add("hidden");
+      } else {
+        buttonCalender?.classList.remove("hidden");
+      }
+      console.log(contentElement.scrollTop);
+    });
   }, [openCover]);
 
   return (
     <Theming>
       <div className="flex justify-end items-center h-screen relative">
-        {/* <Cover /> */}
-        <div
+        <Cover />
+        <section
           id="content"
           className="aspect-[414/697] h-full image-current bg-white overflow-y-auto overflow-x-hidden relative  bg-current bg-cover bg-center bg-opacity-30"
         >
           <div className="z-10 relative top-0">
-            {true && (
+            {openCover && (
               <>
                 <Intro />
                 <AyatQuran />
@@ -47,7 +56,7 @@ function App() {
             )}
           </div>
           <div className="fixed top-0 left-0 w-full h-full bg-white bg-opacity-70"></div>
-        </div>
+        </section>
       </div>
     </Theming>
   );

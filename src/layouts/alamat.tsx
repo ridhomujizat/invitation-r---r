@@ -1,6 +1,8 @@
 import { Button } from "antd";
-import type { SVGProps } from "react";
+import { useEffect, type SVGProps } from "react";
 import service from "../service";
+import useUIStore from "../store/useUiStore";
+import { Fade, Zoom } from "react-awesome-reveal";
 
 export function FluentLocation16Regular(props: SVGProps<SVGSVGElement>) {
   return (
@@ -20,6 +22,7 @@ export function FluentLocation16Regular(props: SVGProps<SVGSVGElement>) {
 }
 
 export default function Alamat() {
+  const { trigger } = useUIStore();
   const openGoogleMaps = () => {
     service
       .post("/maps", {
@@ -39,41 +42,56 @@ export default function Alamat() {
     )}`;
     window.open(url, "_blank");
   };
+
+  useEffect(() => {
+    if (trigger?.alamat !== undefined) {
+      openGoogleMaps();
+    }
+    console.log("trigger", trigger);
+  }, [trigger?.alamat]);
+
   return (
     <div className="w-full flex justify-center">
       <div className="w-[80%] z-10 flex flex-col justify-center items-center px-3 h-full gap-10">
         <div className=" flex flex-col justify-center items-center w-full">
-          <p className="text-2xl font-greetFibes text-milonga mb-3 font-semibold border-b border-primary">
-            Lokasi
-          </p>
-
-          <div className=" border overflow-hidden rounded-xl border-primary w-[85%]">
-            <iframe
-              id="gmap_canvas"
-              src="https://maps.google.com/maps?q=BOEMI+PRASASTI&t=&z=13&ie=UTF8&iwloc=&output=embed"
-              // // frameorder="0"
-              // scrolling="no"
-              // marginHeight="0"
-              // marginwidth="0"
-            ></iframe>
-          </div>
-          <p className="text-sm text-milonga mt-5 font-semibold">
-            Boemi Prasasti
-          </p>
-          <p className=" mt-3 text-center w-[80%]">
-            KP. Kebon Kopi RT/RW 002/001 NO 62, Ds, Sukadami, Cikarang Sel.,
-            Kabupaten Bekasi, Jawa Barat 17530
-          </p>
-          <Button
-            size="small"
-            type="primary"
-            shape="round"
-            className="mt-3"
-            onClick={openGoogleMaps}
-            icon={<FluentLocation16Regular />}
-          >
-            <p className="text-white text-[10px]">Google Maps</p>
-          </Button>
+          <Fade direction="up" triggerOnce>
+            <p className="text-2xl font-greetFibes text-milonga mb-3 font-semibold border-b border-primary">
+              Lokasi
+            </p>
+          </Fade>
+          <Zoom triggerOnce className="w-[85%]">
+            <div className=" border overflow-hidden rounded-xl border-primary w-full ">
+              <iframe
+                id="gmap_canvas"
+                src="https://maps.google.com/maps?q=BOEMI+PRASASTI&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                // // frameorder="0"
+                // scrolling="no"
+                // marginHeight="0"
+                // marginwidth="0"
+              ></iframe>
+            </div>
+          </Zoom>
+          <Fade direction="up" triggerOnce>
+            <p className=" text-milonga mt-5 font-semibold">Boemi Prasasti</p>
+          </Fade>
+          <Fade direction="up" triggerOnce>
+            <p className=" mt-3 text-center w-[170px]">
+              KP. Kebon Kopi RT/RW 002/001 NO 62, Ds, Sukadami, Cikarang Sel.,
+              Kabupaten Bekasi, Jawa Barat 17530
+            </p>
+          </Fade>
+          {/* <Fade direction="up" triggerOnce>
+            <Button
+              size="small"
+              type="primary"
+              shape="round"
+              className="mt-3"
+              onClick={openGoogleMaps}
+              icon={<FluentLocation16Regular />}
+            >
+              <p className="text-white text-[10px]">Google Maps</p>
+            </Button>
+          </Fade> */}
         </div>
       </div>
     </div>

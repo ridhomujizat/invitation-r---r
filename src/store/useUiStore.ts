@@ -7,11 +7,17 @@ interface UIStateType {
     name?: string;
     config?: string;
   };
+  trigger?: {
+    alamat?: number;
+    calender?: number;
+  };
 }
 
 interface UIStoreType extends UIStateType {
   setOpenCover: (value: boolean) => void;
   setDataParams: (value: UIStateType["dataParams"]) => void;
+  setTriggerAlamat: () => void;
+  setTriggerCalender: () => void;
 }
 
 const initialState: UIStateType = {
@@ -24,6 +30,20 @@ const useUIStore = create(
     setOpenCover: (value: boolean) => set(() => ({ openCover: value })),
     setDataParams: (value: UIStateType["dataParams"]) =>
       set((state) => ({ dataParams: { ...state.dataParams, ...value } })),
+    setTriggerAlamat: () =>
+      set((state) => ({
+        trigger: {
+          ...state.trigger,
+          alamat: (state?.trigger?.alamat || 0) + 1,
+        },
+      })),
+    setTriggerCalender: () =>
+      set((state) => ({
+        trigger: {
+          ...state.trigger,
+          calender: (state?.trigger?.calender || 0) + 1,
+        },
+      })),
   }))
 );
 

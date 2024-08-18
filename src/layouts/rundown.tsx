@@ -1,10 +1,14 @@
 /* eslint-disable no-constant-condition */
 import { useSpring, animated } from "react-spring";
 import CountDown from "./count-down";
-import Alamat from "./alamat";
+import Alamat, { FluentLocation16Regular } from "./alamat";
 import { Fade } from "react-awesome-reveal";
+import { Button } from "antd";
+import { CalendarOutlined } from "@ant-design/icons";
+import useUIStore from "../store/useUiStore";
 
 export default function Rundown() {
+  const { setTriggerAlamat, setTriggerCalender } = useUIStore();
   const shinta = useSpring({
     from: { transform: "translateX(0px) rotate(0deg)  translateY(0px)" },
     to: async (next) => {
@@ -86,7 +90,7 @@ export default function Rundown() {
     <>
       <div className=" mt-[4.5rem] relative">
         <div className="relative min-h-[1000px]">
-          <div className="sticky z-[1000] top-[-1rem]">
+          <div className="sticky z-[10] top-[-1rem]">
             <Fade direction="up" triggerOnce>
               <img src="gapura.png" alt="rundown" style={{ scale: "1.3" }} />
             </Fade>
@@ -132,6 +136,45 @@ export default function Rundown() {
               </Fade>
             </div>
           </div>
+          <div className=" absolute z-[12] top-0 left-0 h-full w-full">
+            <div className="relative w-full h-full">
+              <div
+                id="calender-button-absolut"
+                className="absolute top-[31.7rem] w-full flex justify-center items-center"
+              >
+                <Fade direction="up" triggerOnce>
+                  <Button
+                    type="primary"
+                    shape="round"
+                    size="small"
+                    onClick={() => {
+                      setTriggerCalender();
+                    }}
+                    icon={<CalendarOutlined />}
+                    className="mt-3 cursor-pointer"
+                  >
+                    <p className="text-white text-[10px]">Save to Calendar</p>
+                  </Button>
+                </Fade>
+              </div>
+              <div className="absolute top-[61rem] w-full flex justify-center items-center">
+                <Fade direction="up" triggerOnce>
+                  <Button
+                    type="primary"
+                    shape="round"
+                    size="small"
+                    onClick={() => {
+                      setTriggerAlamat();
+                    }}
+                    icon={<FluentLocation16Regular />}
+                    className="mt-3 cursor-pointer"
+                  >
+                    <p className="text-white text-[10px]">Google Maps</p>
+                  </Button>
+                </Fade>
+              </div>
+            </div>
+          </div>
           <div
             className=" bg-cover bg-repeat-y mt-5 absolute w-full h-full top-[1rem] left-0 z-[2]"
             style={{
@@ -142,52 +185,74 @@ export default function Rundown() {
             }}
           >
             <div className=" flex flex-col justify-center items-center w-full">
-              <Fade
-                direction="up"
-                triggerOnce
-                cascade
-                className=" flex flex-col justify-center items-center w-full"
-              >
-                <p className="text-2xl font-greetFibes font-semibold border-b border-primary">
-                  Akad Nikah
-                </p>
+              <div className=" flex flex-col justify-center items-center w-full">
+                <Fade delay={500} direction="up" triggerOnce>
+                  <p className="text-2xl font-greetFibes font-semibold border-b border-primary">
+                    Akad Nikah
+                  </p>
+                </Fade>
                 <div className="flex justify-center divide-x w-[80%] divide-primary items-center mt-4">
-                  <div className="text-center px-4">
+                  <Fade
+                    delay={500}
+                    triggerOnce
+                    direction="left"
+                    className="text-center px-4"
+                  >
                     <p className=" font-semibold">Minggu</p>
-                  </div>
-                  <div className="text-center px-4">
+                  </Fade>
+                  <Fade delay={500} triggerOnce className="text-center px-4">
                     <p className=" text-milonga font-semibold text-xl">01</p>
                     {/* <p className="">2024</p> */}
-                  </div>
-                  <div className="text-center h-full flex justify-center items-center px-4">
+                  </Fade>
+                  <Fade
+                    delay={500}
+                    triggerOnce
+                    direction="right"
+                    className="text-center px-4"
+                  >
                     <p className="font-semibold">September</p>
-                  </div>
+                  </Fade>
                 </div>
-                <p className=" mt-3">Pukul 09.00 WIB - 11.00 WIB</p>
-              </Fade>
+                <Fade delay={500} direction="up" triggerOnce>
+                  <p className=" mt-3">Pukul 09.00 WIB - 11.00 WIB</p>
+                </Fade>
+              </div>
             </div>
             <div className=" flex flex-col justify-center items-center w-full">
-              <p className="text-2xl font-greetFibes text-milonga font-semibold mt-10 border-b border-primary">
-                Resepsi
-              </p>
+              <Fade delay={700} direction="up" triggerOnce>
+                <p className="text-2xl font-greetFibes text-milonga font-semibold mt-10 border-b border-primary">
+                  Resepsi
+                </p>
+              </Fade>
               <div className="flex justify-center divide-x w-[80%] divide-primary items-center mt-4">
-                <div className="text-center px-4">
+                <Fade
+                  delay={700}
+                  triggerOnce
+                  direction="left"
+                  className="text-center px-4"
+                >
                   <p className="font-semibold">Minggu</p>
-                </div>
-                <div className="text-center px-4">
+                </Fade>
+                <Fade delay={700} triggerOnce className="text-center px-4">
                   <p className=" text-milonga font-semibold text-xl">01</p>
-                  {/* <p className="">2024</p> */}
-                </div>
-                <div className="text-center h-full flex justify-center items-center px-4">
+                </Fade>
+                <Fade
+                  delay={700}
+                  triggerOnce
+                  direction="right"
+                  className="text-center h-full flex justify-center items-center px-4"
+                >
                   <p className="font-semibold">September</p>
-                </div>
+                </Fade>
               </div>
-              <p className=" mt-3">Pukul 13.00 WIB - 16.00 WIB</p>
+              <Fade delay={700} direction="up" triggerOnce>
+                <p className=" mt-3">Pukul 13.00 WIB - 16.00 WIB</p>
+              </Fade>
             </div>
             <CountDown />
-
-            <Divider />
-
+            <Fade triggerOnce>
+              <Divider />
+            </Fade>
             <Alamat />
           </div>
         </div>

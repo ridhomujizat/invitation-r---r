@@ -29,7 +29,7 @@ export default function Intro() {
     loop: true,
     config: { duration: 2000 },
   });
-  console.log(rotation);
+  
   return (
     <div className=" w-full h-screen relative flex justify-center items-center">
       <div className="absolute z-[5] left-[-4rem] top-[1rem]">
