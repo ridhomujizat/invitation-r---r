@@ -3,7 +3,7 @@ import { useSpring, animated } from "@react-spring/web";
 
 export default function Intro() {
   const rotation = useSpring({
-    from: { transform: "rotate(0deg)", },
+    from: { transform: "rotate(0deg)" },
     to: async (next) => {
       // eslint-disable-next-line no-constant-condition
       while (true) {
@@ -17,7 +17,7 @@ export default function Intro() {
   });
 
   const rotationFlip = useSpring({
-    from: { transform: "rotate(5deg) rotateY(180deg)", },
+    from: { transform: "rotate(5deg) rotateY(180deg)" },
     to: async (next) => {
       // eslint-disable-next-line no-constant-condition
       while (true) {
@@ -29,7 +29,7 @@ export default function Intro() {
     loop: true,
     config: { duration: 2000 },
   });
-  
+
   return (
     <div className=" w-full h-screen relative flex justify-center items-center">
       <div className="absolute z-[5] left-[-4rem] top-[1rem]">
@@ -58,8 +58,9 @@ export default function Intro() {
       </div>
       <div className="text-center ">
         <Fade delay={500}>
+          <p className="mb-8">You are Invited to:</p>
           <p>The Wedding Of</p>
-          <p className="font-pinyon text-3xl my-4 color-[#400611] ">
+          <p className="font-pinyon text-3xl my-2 color-[#400611] ">
             Rahma & Ridho
           </p>
           <p>01 September 2024</p>

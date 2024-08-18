@@ -47,7 +47,6 @@ export default function Alamat() {
     if (trigger?.alamat !== undefined) {
       openGoogleMaps();
     }
-    console.log("trigger", trigger);
   }, [trigger?.alamat]);
 
   return (

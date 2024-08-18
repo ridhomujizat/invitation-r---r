@@ -22,7 +22,6 @@ export default function Ucapan() {
 
   useEffect(() => {
     service.get("/comment").then((res) => {
-      console.log(res);
       setUcapanList(res?.reverse());
     });
   }, []);
