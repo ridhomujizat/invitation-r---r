@@ -1,53 +1,179 @@
+/* eslint-disable no-constant-condition */
 import { useSpring, animated } from "react-spring";
 import CountDown from "./count-down";
 import Alamat from "./alamat";
+import { Fade } from "react-awesome-reveal";
 
 export default function Rundown() {
-  return (
-    <div className="mt-20">
-      <div
-        className="w-full bg-contain "
-        style={{ backgroundImage: "url('kawung.svg')", minHeight: "70px" }}
-      />
+  const shinta = useSpring({
+    from: { transform: "translateX(0px) rotate(0deg)  translateY(0px)" },
+    to: async (next) => {
+      while (true) {
+        await next({
+          transform: "translateX(20px) rotate(0deg)  translateY(0px)",
+        });
+        await next({
+          transform: "translateX(20px) rotate(5deg)  translateY(0px)",
+        });
+        await next({
+          transform: "translateX(25px) rotate(5deg) translateY(10px)",
+        });
+        await next({
+          transform: "translateX(20px) rotate(0deg)  translateY(0px)",
+        });
+        await next({
+          transform: "translateX(0px) rotate(0deg)  translateY(0px)",
+        });
+      }
+    },
+    delay: 1200,
+    loop: true,
+    config: { duration: 700 }, // Adjust the duration as needed
+  });
 
-      <div
-        className=" bg-cover bg-repeat-y  w-full"
-        style={{
-          backgroundImage: "url('texture.png')",
-          backgroundPosition: "center top",
-          paddingBottom: "10rem",
-        }}
-      >
-        <div className="sticky top-5 z-[1000] ">
-          <img src="gapura.png" alt="rundown" style={{ scale: "1.2" }} />
-          <img
-            src="Gunungan.png"
-            className="absolute z-[5] h-[22rem] left-[-5rem] top-[-1rem]"
-          />
-          <img
-            src="Gunungan.png"
-            className="absolute z-[5] h-[22rem] right-[-5rem] top-[-1rem]"
-            style={{ transform: "rotateY(180deg)" }}
-          />
+  const rama = useSpring({
+    from: { transform: "translateX(0px) rotate(0deg)  translateY(0px)" },
+    to: async (next) => {
+      while (true) {
+        await next({
+          transform: "translateX(-20px) rotate(0deg)  translateY(0px)",
+        });
+        await next({
+          transform: "translateX(-20px) rotate(-5deg)  translateY(0px)",
+        });
+        await next({
+          transform: "translateX(-25px) rotate(-5deg) translateY(10px)",
+        });
+        await next({
+          transform: "translateX(-20px) rotate(0deg)  translateY(0px)",
+        });
+        await next({
+          transform: "translateX(0px) rotate(0deg)  translateY(0px)",
+        });
+      }
+    },
+    delay: 1200,
+    loop: true,
+    config: { duration: 700 }, // Adjust the duration as needed
+  });
+
+  const rotation = useSpring({
+    from: { transform: "rotate(0deg)" },
+    to: async (next) => {
+      while (true) {
+        await next({ transform: "rotate(10deg)" });
+        await next({ transform: "rotate(0deg)" });
+      }
+    },
+    delay: 1200,
+    loop: true,
+    config: { duration: 2000 },
+  });
+
+  const rotationFlip = useSpring({
+    from: { transform: "rotate(-15deg) scaleX(-1)" },
+    to: async (next) => {
+      while (true) {
+        await next({ transform: "rotate(1deg) scaleX(-1)" });
+        await next({ transform: "rotate(-15deg) scaleX(-1)" });
+      }
+    },
+    delay: 1200,
+    loop: true,
+    config: { duration: 2000 },
+  });
+  return (
+    <div className=" mt-[4.5rem] relative">
+      <Fade>
+        <div
+          className="w-full bg-contain mb-7 "
+          style={{ backgroundImage: "url('kawung.svg')", minHeight: "70px" }}
+        />
+      </Fade>
+      <div className="relative min-h-[1200px]">
+        <div className="sticky z-[1000] top-[4rem]">
+          <Fade direction="up" triggerOnce>
+            <img src="gapura.png" alt="rundown" style={{ scale: "1.3" }} />
+          </Fade>
+          <div className="absolute top-[17rem] left-[-4rem] ">
+            <Fade direction="bottom-left" triggerOnce>
+              <animated.img
+                src="shinta.png"
+                alt="shinta"
+                className="h-[20rem]"
+                style={shinta}
+              />
+            </Fade>
+          </div>
+          <div className="absolute top-[15rem] right-[-4rem] z-[3]  ">
+            <Fade direction="bottom-right" triggerOnce>
+              <animated.img
+                src="rama.png"
+                alt="rama"
+                className="h-[20rem]"
+                style={rama}
+              />
+            </Fade>
+          </div>
+          <div
+            className="absolute z-[3] top-[15rem] left-[-4rem]"
+            style={{ transform: "rotate(34deg)" }}
+          >
+            <Fade direction="top-left" triggerOnce duration={2000}>
+              <animated.img
+                src="flower-2.png"
+                className="h-[7rem]"
+                style={rotation}
+              />
+            </Fade>
+          </div>
+          <div className="absolute right-[-1rem] bottom-[-3rem]">
+            <Fade
+              direction="bottom-right"
+              triggerOnce
+              duration={2000}
+            >
+              <animated.img
+                src="flower-2.png"
+                className="h-[4.5rem] w-auto"
+                style={rotationFlip}
+              />
+            </Fade>
+          </div>
         </div>
-        <div className="mt-[-15rem]">
+        <div
+          className=" bg-cover bg-repeat-y mt-5 absolute w-full h-full top-[1rem] left-0"
+          style={{
+            backgroundImage: "url('texture.png')",
+            backgroundPosition: "center top",
+            paddingBottom: "10rem",
+            paddingTop: "7rem",
+          }}
+        >
           <div className=" flex flex-col justify-center items-center w-full">
-            <p className="text-xl text-milonga font-semibold border-b border-primary">
-              Akad Nikah
-            </p>
-            <div className="flex justify-center divide-x w-[80%] divide-primary items-center mt-4">
-              <div className="text-center flex-1">
-                <p className="">Minggu</p>
+            <Fade
+              direction="up"
+              triggerOnce
+              cascade
+              className=" flex flex-col justify-center items-center w-full"
+            >
+              <p className="text-xl text-milonga font-semibold border-b border-primary">
+                Akad Nikah
+              </p>
+              <div className="flex justify-center divide-x w-[80%] divide-primary items-center mt-4">
+                <div className="text-center flex-1">
+                  <p className="">Minggu</p>
+                </div>
+                <div className="text-center px-4">
+                  <p className=" text-milonga font-semibold text-xl">01</p>
+                  {/* <p className="">2024</p> */}
+                </div>
+                <div className="text-center h-full flex justify-center items-center flex-1">
+                  <p className="">September</p>
+                </div>
               </div>
-              <div className="text-center px-4">
-                <p className=" text-milonga font-semibold text-xl">01</p>
-                {/* <p className="">2024</p> */}
-              </div>
-              <div className="text-center h-full flex justify-center items-center flex-1">
-                <p className="">September</p>
-              </div>
-            </div>
-            <p className=" mt-3">Pukul 08.00 WIB - Selesai</p>
+              <p className=" mt-3">Pukul 08.00 WIB - Selesai</p>
+            </Fade>
           </div>
           <div className=" flex flex-col justify-center items-center w-full">
             <p className="text-xl text-milonga font-semibold mt-10 border-b border-primary">

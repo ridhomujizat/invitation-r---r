@@ -21,38 +21,30 @@ function App() {
 
   useEffect(() => {
     if (!openCover) return;
-    AOS.init({
-      once: true, // Whether animation should happen only once
-    });
-    const contentElement = document.getElementById("content");
-    if (contentElement) {
-      contentElement.scrollBy({
-        top: window.innerHeight,
-        behavior: "smooth",
-      });
-    }
   }, [openCover]);
 
   return (
     <Theming>
-      <div className="flex justify-end items-center h-screen ">
+      <div className="flex justify-end items-center h-screen relative">
         <Cover />
-
         <div
           id="content"
           className="aspect-[414/697] h-full image-current bg-white overflow-y-auto overflow-x-hidden relative  bg-current bg-cover bg-center bg-opacity-30"
         >
-          <div className="z-10 relative">
-            <CoverHidden />
-            <Intro />
-            <AyatQuran />
-            <Mempelai />
-            {/* <CountDown /> */}
-            <Rundown />
-            <Gift />
-            <Ucapan />
-            <Saythanks />
-            <Footer />
+          <div className="z-10 relative top-0">
+            {openCover && (
+              <>
+                <Intro />
+                <AyatQuran />
+                <Mempelai />
+                {/* <CountDown /> */}
+                <Rundown />
+                <Gift />
+                <Ucapan />
+                <Saythanks />
+                <Footer />
+              </>
+            )}
           </div>
           <div className="fixed top-0 left-0 w-full h-full bg-white bg-opacity-70"></div>
         </div>

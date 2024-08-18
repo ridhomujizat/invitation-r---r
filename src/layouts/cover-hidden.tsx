@@ -1,27 +1,9 @@
 import React, { useEffect } from "react";
+import useUIStore from "../store/useUiStore";
 
 export default function CoverHidden() {
-  const [isScrolled, setIsScrolled] = React.useState(false);
 
-  useEffect(() => {
-    const getContent = document.getElementById("content");
-    const handleScroll = () => {
-      if (getContent) {
-        console.log(getContent.scrollTop, window.innerHeight);
-        if (getContent.scrollTop >= window.innerHeight) {
-          setIsScrolled((prev) => true);
-          getContent.removeEventListener("scroll", handleScroll);
-        }
-      }
-    };
-    getContent.addEventListener("scroll", handleScroll);
-    return () => {
-      getContent.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  if (isScrolled) {
-    return <></>;
-  }
-  return <div className="min-h-screen w-full"></div>;
+  const{openCover} = useUIStore((s) => s);
+  return <div className="h-screen"></div>;
+  return <div className={`w-full ${openCover && 'animate-hiddenHight'} `}></div>;
 }
