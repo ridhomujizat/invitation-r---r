@@ -16,7 +16,7 @@ import { Fade } from "react-awesome-reveal";
 //         ></div>
 //         <div className="absolute top-0 left-0 w-full z-10 flex flex-col justify-center items-center h-full p-3">
 //           <p className=" text-white text-center">
-//             “ Dan di antara tanda-tanda (kebesaran) -Nya adalah Dia menciptakan
+//             “ dan di antara tanda-tanda (kebesaran) -Nya adalah Dia menciptakan
 //             pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung
 //             dan merasa tenteram kepadanya "
 //           </p>
@@ -37,7 +37,7 @@ export default function AyatQuran() {
           <div className=" px-3 py-5">
             {/* <img src="/r-r.webp" alt="Rahma & Ridho" className="w-[200px] h-[200px] mx-auto aspect-square" /> */}
             <p className=" text-opacity-20 text-center text">
-              "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan
+              "dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan
               pasangan-pasangan untukmu dari jenismu sendiri, agar kamu
               cenderung dan merasa tenteram kepadanya, dan Dia menjadikan
               diantaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu

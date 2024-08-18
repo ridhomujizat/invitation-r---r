@@ -72,10 +72,10 @@ export default function Alamat() {
             </div>
           </Zoom>
           <Fade direction="up" triggerOnce>
-            <p className=" text-milonga mt-5 font-semibold">Boemi Prasasti</p>
+            <p className="text-xl mt-5 ">(Boemi Prasasti)</p>
           </Fade>
           <Fade direction="up" triggerOnce>
-            <p className=" mt-3 text-center w-[170px]">
+            <p className="  mt-3 text-center w-[200px]">
               KP. Kebon Kopi RT/RW 002/001 NO 62, Ds, Sukadami, Cikarang Sel.,
               Kabupaten Bekasi, Jawa Barat 17530
             </p>

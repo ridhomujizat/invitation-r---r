@@ -94,7 +94,7 @@ export default function Mempelai() {
                   <p className="">
                     Putri Pertama dari
                     <br />
-                    Bapak Sutikno Dan Ibu Legiyartini
+                    Bapak Sutikno dan Ibu Legiyartini
                   </p>
                   <InstagramButton un="rahmarayanti" />
                 </Fade>
@@ -116,7 +116,7 @@ export default function Mempelai() {
                   <p className="">
                     Putra Pertama dari
                     <br />
-                    Bapak Mujizat Dan Ibu Erniati
+                    Bapak Mujizat dan Ibu Erniati
                   </p>
                   <InstagramButton un="ridhomujizat" />
                 </Fade>

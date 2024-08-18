@@ -52,7 +52,7 @@ export default function Ucapan() {
       })
       .then((res) => {
         console.log(res);
-        setUcapanList([...ucapanList, res]);
+        setUcapanList([res, ...ucapanList]);
         setKonfirmasi("");
         setUcapan("");
         setOnClicked(false);
@@ -62,12 +62,12 @@ export default function Ucapan() {
     <Fade direction="up" triggerOnce cascade>
       <div className=" py-20 px-8 gap-5 flex flex-col items-center justify-center text-center bg-cover bg-center ">
         <Card className="w-full px-2 py-5 flex flex-col justify-center items-center gap-2">
-          <h2 className="text-xl font-semibold border-primary border-b">
+          <h2 className="text-xl font-semibold border-primary border-b font-greetFibes">
             Wedding Wish
           </h2>
           <div className="flex flex-col gap-2 w-[90%]">
             <Input
-              placeholder="Name"
+              placeholder="Nama"
               // disabled={Boolean(name)}
               value={name}
               status={onClicked && !name ? "error" : undefined}
@@ -92,13 +92,13 @@ export default function Ucapan() {
                 { label: "Hadir", value: "Hadir" },
                 { label: "Tidak Hadir", value: "Tidak Hadir" },
               ]}
-              status={onClicked && !konfirmasi ? "error" : undefined}
+              // status={onClicked && !konfirmasi ? "error" : undefined}
             />
             <Button
               size="small"
               type="primary"
               onClick={() => {
-                if (name && ucapan && konfirmasi) {
+                if (name && ucapan) {
                   message.success("Berhasil Mengirimkan Ucapan");
                   setOnClicked(true);
                   sendToDB();
@@ -119,11 +119,11 @@ export default function Ucapan() {
                   <div className=" bg-primary bg-opacity-35 p-2 rounded w-full">
                     <div className="flex gap-1 text-[11px]">
                       <p className=" font-semibold">{item?.name}</p>
-                      {item?.konfirmasi === "Hadir" ? (
+                      {/* {item?.konfirmasi === "Hadir" ? (
                         <CheckCircleOutlined className="text-green-500" />
                       ) : (
                         <CloseCircleOutlined className="text-red-500" />
-                      )}
+                      )} */}
                     </div>
                     <div className="flex gap-1 text-[8px] opacity-50 ">
                       <ClockCircleOutlined />

@@ -108,7 +108,7 @@ export default function CountDown() {
             size="small"
             onClick={handleSaveToCalendar}
             icon={<CalendarOutlined />}
-            className="mt-3 opacity-0"
+            className="mt-5 "
           >
             <p className="text-white text-[10px]">Save to Calendar</p>
           </Button>

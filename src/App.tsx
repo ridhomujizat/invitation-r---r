@@ -13,9 +13,12 @@ import Saythanks from "./layouts/saythanks";
 import Ucapan from "./layouts/ucapan";
 import useUIStore from "./store/useUiStore";
 import CoverHidden from "./layouts/cover-hidden";
+import MusicPlayer from "./hooks/use-music";
+import useGetParams from "./hooks/use-get-params";
 
 function App() {
   const { openCover } = useUIStore((s) => s);
+  const { config } = useGetParams();
 
   useEffect(() => {
     if (!openCover) return;
@@ -28,7 +31,6 @@ function App() {
       } else {
         buttonCalender?.classList.remove("hidden");
       }
-      console.log(contentElement.scrollTop);
     });
   }, [openCover]);
 
@@ -41,6 +43,7 @@ function App() {
           className="aspect-[414/697] h-full image-current bg-white overflow-y-auto overflow-x-hidden relative  bg-current bg-cover bg-center bg-opacity-30"
         >
           <div className="z-10 relative top-0">
+            <MusicPlayer />
             {openCover && (
               <>
                 <Intro />
@@ -48,7 +51,8 @@ function App() {
                 <Mempelai />
                 {/* <CountDown /> */}
                 <Rundown />
-                <Gift />
+                {config.hideGift && <Gift />}
+
                 <Ucapan />
                 <Saythanks />
                 <Footer />

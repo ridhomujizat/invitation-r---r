@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import useUIStore from "../store/useUiStore";
 
 export default function useGetParams() {
@@ -9,12 +9,21 @@ export default function useGetParams() {
 
     setDataParams({
       name: queryParams.get("name"),
+      config: queryParams.get("c"),
     });
-
   }, []);
 
+  const config = useMemo(() => {
+    const cParams = dataParams?.config || "";
+    const hideGift = !cParams.includes("a");
+    return {
+      hideGift,
+    };
+  }, [dataParams?.config]);
+
+
   return {
-    name: dataParams?.name || '',
-    config: dataParams?.config || {},
+    name: dataParams?.name || "",
+    config,
   };
 }
