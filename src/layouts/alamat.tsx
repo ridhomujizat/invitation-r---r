@@ -40,11 +40,11 @@ export default function Alamat() {
     window.open(url, "_blank");
   };
   return (
-    <div className="w-full flex justify-center mt-12">
-      <div className="w-[80%] z-10 flex flex-col justify-center items-center p-3 h-full gap-10">
+    <div className="w-full flex justify-center">
+      <div className="w-[80%] z-10 flex flex-col justify-center items-center px-3 h-full gap-10">
         <div className=" flex flex-col justify-center items-center w-full">
-          <p className="text-xl text-milonga mb-3 font-semibold border-b border-primary">
-            Lokasi Acara
+          <p className="text-2xl font-greetFibes text-milonga mb-3 font-semibold border-b border-primary">
+            Lokasi
           </p>
 
           <div className=" border overflow-hidden rounded-xl border-primary w-[85%]">

@@ -9,6 +9,8 @@ import {
 import { useState } from "react";
 import useGetParams from "../hooks/use-get-params";
 import service from "../service";
+import Card from "../components/card";
+import { Fade, Zoom } from "react-awesome-reveal";
 
 const address =
   "Jl. Kebagusan III No.6 1, RT.1/RW.5, Kebagusan, Ps. Minggu, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12520. No 6.1.R";
@@ -31,34 +33,28 @@ export default function Gift() {
   const params = useGetParams();
 
   const storeToDB = (to: string, type: string) => {
-    service.post("/gift", {
-      name: params.name,
-      type: type,
-      sendTo: to,
-    }).then((res) => {
-      console.log(res);
-    })
-  }
+    service
+      .post("/gift", {
+        name: params.name,
+        type: type,
+        sendTo: to,
+      })
+      .then((res) => {
+        console.log(res);
+      });
+  };
 
   const sendAllert = (text) => {
     message.success({
       icon: <SmileOutlined />,
       content: `Terimkasih, ${params.name}!`,
     });
-  }
+  };
   return (
-    <div className="bg-primary px-10 py-10">
-      <div className="bg-river bg-bottom bg-cover overflow-hidden rounded-xl relative h-[400px]">
-        {/* <div
-          className="absolute top-0 left-0 w-full h-full bg-opacity-10 bg-[#E4DBD6]"
-          style={{
-            backgroundSize: "inherit",
-            scale: 1.5,
-            zIndex: 1,
-          }}
-        ></div> */}
-        <div className="absolute top-0 left-0 w-full z-10 flex flex-col justify-center items-center h-full gap-2">
-          <p className=" text-center">Tanda Kasih</p>
+    <Fade direction="up" triggerOnce>
+      <div className=" px-10 mt-20">
+        <Card className="p-5 py-15 flex flex-col items-center u gap-2">
+          <p className=" text-center font-semibold text-xl border-b border-primary ">Tanda Kasih</p>
           <p className=" text-center  w-[80%]">
             Doa Restu Anda merupakan karunia yang sangat berarti bagi kami.
           </p>
@@ -88,69 +84,70 @@ export default function Gift() {
               <p className="text-white text-[10px]">Kirim Kado</p>
             </Button>
           </div>
-          {visible === "cashless" && (
-            <>
-              {norek.map((item, index) => (
-                <div
-                  key={index}
-                  className="flex gap-2 items-center bg-primary rounded p-2 w-[80%]"
-                >
-                  <img
-                    src={bcaImage}
-                    alt="qr-code"
-                    className="w-10 h-10 bg-white rounded"
-                  />
-                  <div className="flex justify-between flex-1 gap-2 items-center">
-                    <div>
-                      <p className="text-[10px] text-white font-semibold">
-                        {item.norek}
-                      </p>
-                      <p className="text-[10px] text-white">A.n {item.an}</p>
-                    </div>
-                    <Button
-                      className=" opacity-50"
-                      icon={<CopyOutlined />}
-                      shape="circle"
-                      size="small"
-                      onClick={() => {
-                        navigator.clipboard.writeText(address);
-                        sendAllert("No Rekening")
-                        storeToDB(`${item.norek} - ${item.an}`, "cashless")
-                      }}
+          <Fade duration={500} cascade className="flex flex-col gap-2 w-[80%]">
+            {visible === "cashless" && (
+              <>
+                {norek.map((item, index) => (
+                  <div
+                    key={index}
+                    className="flex gap-2 items-center bg-primary rounded p-2 w-full"
+                  >
+                    <img
+                      src={bcaImage}
+                      alt="qr-code"
+                      className="w-10 h-10 bg-white rounded"
                     />
+                    <div className="flex justify-between flex-1 gap-2 items-center">
+                      <div>
+                        <p className="text-[10px] text-white font-semibold">
+                          {item.norek}
+                        </p>
+                        <p className="text-[10px] text-white">A.n {item.an}</p>
+                      </div>
+                      <Button
+                        className=" opacity-50"
+                        icon={<CopyOutlined />}
+                        shape="circle"
+                        size="small"
+                        onClick={() => {
+                          navigator.clipboard.writeText(address);
+                          sendAllert("No Rekening");
+                          storeToDB(`${item.norek} - ${item.an}`, "cashless");
+                        }}
+                      />
+                    </div>
                   </div>
-                </div>
-              ))}
-            </>
-          )}
-          {visible === "gift" && (
-            <div className="flex gap-2 items-start bg-primary rounded p-2 w-[80%]">
-              <HomeFilled
-                style={{
-                  marginTop: 2,
-                  opacity: 0.5,
-                  color: "white",
-                }}
-              />
-              <div className="flex gap-2 items-center justify-between flex-1">
-                <p className="text-[10px] text-white">{address}</p>
-                <Button
-                  className=" opacity-50"
-                  icon={<CopyOutlined />}
-                  shape="circle"
-                  size="small"
-                  onClick={() => {
-                    navigator.clipboard.writeText(address);
-                    sendAllert("Alamat")
-                    storeToDB('Rumah', "gift")
-
+                ))}
+              </>
+            )}
+            {visible === "gift" && (
+              <div className="flex gap-2 items-start bg-primary rounded p-2 ">
+                <HomeFilled
+                  style={{
+                    marginTop: 2,
+                    opacity: 0.5,
+                    color: "white",
                   }}
                 />
+                <div className="flex gap-2 items-center justify-between flex-1">
+                  <p className="text-[10px] text-white">{address}</p>
+                  <Button
+                    className=" opacity-50"
+                    icon={<CopyOutlined />}
+                    shape="circle"
+                    size="small"
+                    onClick={() => {
+                      navigator.clipboard.writeText(address);
+                      sendAllert("Alamat");
+                      storeToDB("Rumah", "gift");
+                    }}
+                  />
+                </div>
               </div>
-            </div>
-          )}
-        </div>
+            )}
+          </Fade>
+        </Card>
       </div>
-    </div>
+    </Fade>
   );
 }

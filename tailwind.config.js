@@ -14,6 +14,7 @@ export default {
         pinyon: ["Pinyon Script", "cursive"],
         milonga: ["Milonga", "serif"],
         cormorant: ["Cormorant", "serif"],
+        greetFibes: ["Great Vibes", "cursive"],
       },
       colors: {
         primary: "#976C74",

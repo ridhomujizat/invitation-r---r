@@ -10,7 +10,7 @@ export default function Card({
   return (
     <div
       className={
-        "relative border-primary border-[1.4px] bg-opacity-60 bg-[#F4EDE8] rounded-md " +
+        "relative border-primary border-[1.4px] bg-opacity-60 bg-[#F4EDE8] rounded-xl " +
         className
       }
     >

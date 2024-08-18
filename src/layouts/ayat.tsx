@@ -15,12 +15,12 @@ import { Fade } from "react-awesome-reveal";
 //           }}
 //         ></div>
 //         <div className="absolute top-0 left-0 w-full z-10 flex flex-col justify-center items-center h-full p-3">
-//           <p className=" text-white text-sm text-center">
+//           <p className=" text-white text-center">
 //             “ Dan di antara tanda-tanda (kebesaran) -Nya adalah Dia menciptakan
 //             pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung
 //             dan merasa tenteram kepadanya "
 //           </p>
-//           <p className="text-white text-sm text-center mt-5">
+//           <p className="text-white text-center mt-5">
 //             (QS. Ar-Rum: 21)
 //           </p>
 //         </div>
@@ -36,7 +36,7 @@ export default function AyatQuran() {
         <Card>
           <div className=" px-3 py-5">
             {/* <img src="/r-r.webp" alt="Rahma & Ridho" className="w-[200px] h-[200px] mx-auto aspect-square" /> */}
-            <p className=" text-opacity-20 text-sm text-center text">
+            <p className=" text-opacity-20 text-center text">
               "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan
               pasangan-pasangan untukmu dari jenismu sendiri, agar kamu
               cenderung dan merasa tenteram kepadanya, dan Dia menjadikan
@@ -44,7 +44,7 @@ export default function AyatQuran() {
               benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang
               berpikir."
             </p>
-            <p className=" text-opacity-20 text-sm text-center mt-5">
+            <p className=" text-opacity-20 text-center mt-5">
               (QS. Ar-Rum: 21)
             </p>
           </div>

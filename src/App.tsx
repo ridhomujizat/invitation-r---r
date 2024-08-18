@@ -26,13 +26,13 @@ function App() {
   return (
     <Theming>
       <div className="flex justify-end items-center h-screen relative">
-        <Cover />
+        {/* <Cover /> */}
         <div
           id="content"
           className="aspect-[414/697] h-full image-current bg-white overflow-y-auto overflow-x-hidden relative  bg-current bg-cover bg-center bg-opacity-30"
         >
           <div className="z-10 relative top-0">
-            {openCover && (
+            {true && (
               <>
                 <Intro />
                 <AyatQuran />
