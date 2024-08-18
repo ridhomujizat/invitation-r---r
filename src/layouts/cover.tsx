@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import useGetParams from "../hooks/use-get-params";
 import useUIStore from "../store/useUiStore";
 import { Button } from "antd";
@@ -53,7 +53,17 @@ export default function Cover() {
     //   docElement?.msRequestFullscreen();
     // }
   };
+  useEffect(() => {
+    const handleScroll = () => {
+      console.log(window.scrollY);
+    };
 
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <div
       className={`absolute left-0 w-full h-full z-50 transition-top duration-1000 ${
@@ -87,9 +97,9 @@ export default function Cover() {
                 <div className=" min-w-[.2rem] bg-white min-h-[80%]"></div>
                 <div className="w-[75px] h-full"></div>
               </div>
-              <div className=" absolute top-0 left-0 z-10">
+              <div className="absolute top-0 left-0 z-10 h-[144px]">
                 <div className="  w-[162px] h-full flex justify-center items-center">
-                  <div className="w-[75px]"></div>
+                  <div className="w-[75px]  h-full"></div>
                   <div className=" min-w-[.2rem] bg-white h-[80%]"></div>
                   <div className="w-[75px] font-cormorant px-2 overflow-hidden flex justify-center items-center">
                     <animated.div style={RRight}>
@@ -107,7 +117,7 @@ export default function Cover() {
             <p className=" text-2xl  my-3 bg-opacity-20 rounded text-white underline capitalize">
               {params.name}
             </p>
-            <div className="mt-[5rem]" onClick={handleOpenCover}>
+            <div className="mt-[5rem] cursor-pointer" onClick={handleOpenCover}>
               <animated.div style={styles} className="scroll-down opacity-80">
                 <ScrollDown />
               </animated.div>

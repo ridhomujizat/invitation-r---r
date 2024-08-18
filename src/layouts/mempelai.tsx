@@ -35,12 +35,12 @@ export default function Mempelai() {
   return (
     <div className="my-20 pb-20 flex flex-col items-center justify-center gap-20 text-center ">
       <div className="flex flex-col justify-center items-center gap-4  px-8">
-        <Fade direction="up">
+        <Fade direction="up" triggerOnce>
           <p className=" text-xl font-semibold border-b border-primary">
             Assalamualaikum Wr. Wb.
           </p>
         </Fade>
-        <Fade direction="up">
+        <Fade triggerOnce direction="up">
           <p className="">
             Alhamdulillah, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dan
             memberikan doa restu pada acara pernikahan kami:
@@ -87,7 +87,7 @@ export default function Mempelai() {
           <Card className="pb-[3rem] relative pt-[7rem]">
             <div className="flex justify-center flex-col w-full items-center gap-6">
               <div className="flex flex-col justify-center items-center gap-2">
-                <Fade direction="down" cascade>
+                <Fade triggerOnce direction="down" cascade>
                   <p className=" text-3xl font-semibold font-greetFibes">
                     Rahma Nurul <br /> Khoirayanti
                   </p>
@@ -100,16 +100,16 @@ export default function Mempelai() {
                 </Fade>
               </div>
               <div className="flex justify-center items-center gap-2 w-[70%]">
-                <Fade direction="left" cascade className="flex-1">
+                <Fade triggerOnce direction="left" cascade className="flex-1">
                   <div className="flex-1 border-t-2 border-primary"></div>
                 </Fade>
                 <p className=" font-milonga text-[30px]">&</p>
-                <Fade direction="right" cascade className="flex-1">
+                <Fade triggerOnce direction="right" cascade className="flex-1">
                   <div className="flex-1 border-t-2 border-primary"></div>
                 </Fade>
               </div>
               <div className="flex flex-col justify-center items-center gap-2">
-                <Fade direction="up" cascade>
+                <Fade triggerOnce direction="up" cascade>
                   <p className=" text-3xl font-semibold font-greetFibes">
                     Ridho
                   </p>

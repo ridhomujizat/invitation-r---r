@@ -57,7 +57,7 @@ export default function Intro() {
         </Fade>
       </div>
       <div className="text-center ">
-        <Fade delay={500}>
+        <Fade triggerOnce delay={500}>
           <p className="mb-8">You are Invited to:</p>
           <p>The Wedding Of</p>
           <p className="font-pinyon text-3xl my-2 color-[#400611] ">
