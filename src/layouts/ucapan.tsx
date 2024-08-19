@@ -30,7 +30,7 @@ export default function Ucapan() {
     if (params.name) {
       setName(params.name);
     }
-  }, [params]);
+  }, [params.name]);
 
   useEffect(() => {
     if (scrollRef.current) {
@@ -44,6 +44,7 @@ export default function Ucapan() {
   const sendToDB = () => {
     service
       .post("/comment", {
+        rn: params?.name,
         name,
         ucapan,
         konfirmasi,
@@ -68,6 +69,7 @@ export default function Ucapan() {
             <Input
               placeholder="Nama"
               // disabled={Boolean(name)}
+              onChange={(e) => setName(e.target.value)}
               value={name}
               status={onClicked && !name ? "error" : undefined}
             />
