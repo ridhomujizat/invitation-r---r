@@ -44,13 +44,13 @@ function App() {
     <Theming>
       <div className="flex justify-center md:justify-end items-center h-screen relative">
         <Cover />
-        <div className="hidden md:block w-auto relative  h-full overflow-hidden">
-          <img src="rr.png" alt="cover" className="object-cover z-10" />
-          <div className="absolute inset-0 bg-gradient-to-l from-primary to-transparent z-20 opacity-45"></div>
+        <div className="hidden md:block relative  h-full overflow-hidden w-full bg-current z-10">
+          <img src="rr.png" alt="cover" className="object-cover z-10 h-full w-full" />
+          {/* <div className="absolute inset-0 bg-gradient-to-l from-primary to-transparent z-20 opacity-45"></div> */}
         </div>
         <section
           id="content"
-          className="aspect-[414/697] h-full image-current bg-white overflow-y-auto overflow-x-hidden relative  bg-current bg-cover bg-center bg-opacity-30"
+          className="aspect-[414/697] lg:aspect-[1/1.3] h-full image-current bg-white overflow-y-auto overflow-x-hidden relative  bg-current bg-cover bg-center bg-opacity-30"
         >
           <div className="z-10 relative top-0">
             <MusicPlayer />

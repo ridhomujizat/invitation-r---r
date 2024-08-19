@@ -12,11 +12,11 @@ export default function Saythanks() {
       >
         <div className="absolute top-0 left-0 w-full h-full z-[20] pt-[150px] ">
           <Fade triggerOnce direction="up" cascade className="text-center ">
-            <p>Terimakasih</p>
-            <p className="font-pinyon text-3xl my-4 color-[#400611] ">
+            <p>Terima kasih</p>
+            <p className="font-greetFibes text-3xl my-4 color-[#400611] ">
               Rahma & Ridho
             </p>
-            <p>01 September 2024</p>
+            <p>01/09/24</p>
           </Fade>
         </div>
       </div>

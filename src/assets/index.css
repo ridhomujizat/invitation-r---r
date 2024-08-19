@@ -2,22 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-
 * {
-    box-sizing: border-box;
-    /* color: #400611; */
-    font-family:  "Linden Hill", serif;
-    scroll-behavior: smooth; /* Add this line */
+  box-sizing: border-box;
+  /* color: #400611; */
+  font-family: "Moderustic", sans-serif;
+  scroll-behavior: smooth; /* Add this line */
 }
 
 body {
-    color: #7E4B5E;
-    /* color: rgba(0, 0, 0, .6); */
-    font-size: 16px;
-    
+  color: #7e4b5e;
+  /* color: rgba(0, 0, 0, .6); */
+  font-size: 13px;
 }
-.pinyon-regular {
-    font-family: "Pinyon Script", cursive;
-    font-style: normal;
-  }
-  

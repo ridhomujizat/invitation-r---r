@@ -86,7 +86,7 @@ export default function Cover() {
             id="cover-content"
             className="flex flex-col justify-center items-center h-full text-white  animate-fadeIn"
           >
-            <p className="uppercase mb-4 font-cormorant">Wedding Invitation</p>
+            <p className="uppercase mb-4 font-semibold">Wedding Invitation</p>
             <div className="relative h-[144px]">
               <div className=" w-[162px] h-full flex justify-center items-center">
                 <div className="w-[75px] font-cormorant px-2 overflow-hidden flex justify-center items-center">

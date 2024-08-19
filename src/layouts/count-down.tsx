@@ -102,6 +102,7 @@ export default function CountDown() {
             </div>
           </div>
         </Fade>
+        <Fade direction="up" triggerOnce >
           <Button
             type="primary"
             shape="round"
@@ -112,6 +113,7 @@ export default function CountDown() {
           >
             <p className="text-white text-[10px]">Save to Calendar</p>
           </Button>
+        </Fade>
       </div>
     </div>
   );

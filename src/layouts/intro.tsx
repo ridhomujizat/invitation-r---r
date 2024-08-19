@@ -57,13 +57,13 @@ export default function Intro() {
         </Fade>
       </div>
       <div className="text-center ">
-        <Fade triggerOnce delay={500}>
-          <p className="mb-8">You are Invited to:</p>
-          <p>The Wedding Of</p>
-          <p className="font-pinyon text-3xl my-2 color-[#400611] ">
+        <Fade cascade triggerOnce delay={800}>
+          <p className="mb-11">You are Invited to:</p>
+          <p>The Wedding of</p>
+          <p className="font-greetFibes text-4xl my-2 color-[#400611] ">
             Rahma & Ridho
           </p>
-          <p>01 September 2024</p>
+          <p>01/09/24</p>
         </Fade>
       </div>
     </div>

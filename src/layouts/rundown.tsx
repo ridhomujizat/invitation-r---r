@@ -94,7 +94,7 @@ export default function Rundown() {
             <Fade direction="up" triggerOnce>
               <img src="gapura.png" alt="rundown" style={{ scale: "1.3" }} />
             </Fade>
-            <div className="absolute top-[17rem] left-[-4rem] ">
+            <div className="absolute top-[15rem] left-[-4rem] ">
               <Fade direction="bottom-left" triggerOnce>
                 <animated.img
                   src="shinta.png"
@@ -104,7 +104,7 @@ export default function Rundown() {
                 />
               </Fade>
             </div>
-            <div className="absolute top-[15rem] right-[-4rem] z-[3]  ">
+            <div className="absolute top-[12rem] right-[-4rem] z-[3]  ">
               <Fade direction="bottom-right" triggerOnce>
                 <animated.img
                   src="rama.png"
@@ -138,23 +138,23 @@ export default function Rundown() {
           </div>
           <div className=" absolute z-[12] top-0 left-0 h-full w-full">
             <div className="relative w-full h-full">
-              <div
-                id="calender-button-absolut"
-                className="absolute top-[31.7rem] w-full flex justify-center items-center"
-              >
+              <div className="absolute top-[31rem] w-full flex justify-center items-center">
                 <Fade direction="up" triggerOnce>
-                  <Button
-                    type="primary"
-                    shape="round"
-                    size="small"
-                    onClick={() => {
-                      setTriggerCalender();
-                    }}
-                    icon={<CalendarOutlined />}
-                    className="mt-5 cursor-pointer"
-                  >
-                    <p className="text-white text-[10px]">Save to Calendar</p>
-                  </Button>
+                  <div>
+                    <Button
+                      id="calender-button-absolut"
+                      type="primary"
+                      shape="round"
+                      size="small"
+                      onClick={() => {
+                        setTriggerCalender();
+                      }}
+                      icon={<CalendarOutlined />}
+                      className="mt-5 cursor-pointer"
+                    >
+                      <p className="text-white text-[10px]">Save to Calendar</p>
+                    </Button>
+                  </div>
                 </Fade>
               </div>
               <div className="absolute top-[61rem] w-full flex justify-center items-center">

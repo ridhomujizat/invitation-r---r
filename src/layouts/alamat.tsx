@@ -60,23 +60,24 @@ export default function Alamat() {
           </Fade>
           <Zoom triggerOnce className="w-[85%]">
             <div className=" border overflow-hidden rounded-xl border-primary w-full ">
-              <iframe
+              <img src="maps.png" className="w-full h-full object-cover" />
+              {/* <iframe
                 id="gmap_canvas"
-                src="https://maps.google.com/maps?q=BOEMI+PRASASTI&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                src="https://maps.google.com/maps?q=BOEMI+PRASASTI&t=&z=12&ie=UTF8&iwloc=&output=embed"
                 // // frameorder="0"
                 // scrolling="no"
                 // marginHeight="0"
                 // marginwidth="0"
-              ></iframe>
+              ></iframe> */}
             </div>
           </Zoom>
           <Fade direction="up" triggerOnce>
-            <p className="text-xl mt-5 ">(Boemi Prasasti)</p>
+            <p className="text-[1.05rem] mt-5 ">(Boemi Prasasti)</p>
           </Fade>
           <Fade direction="up" triggerOnce>
             <p className="  mt-3 text-center w-[200px]">
-              KP. Kebon Kopi RT/RW 002/001 NO 62, Ds, Sukadami, Cikarang Sel.,
-              Kabupaten Bekasi, Jawa Barat 17530
+              Kp. Kebon Kopi RT 002/RW 001 NO 62, Ds. Sukadami,<br /> Kec. Cikarang Selatan,
+              Bekasi, Jawa Barat, 17530
             </p>
           </Fade>
           {/* <Fade direction="up" triggerOnce>

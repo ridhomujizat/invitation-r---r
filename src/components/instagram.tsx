@@ -7,9 +7,9 @@ export default function InstagramButton({ un }: { un: string }) {
   };
   return (
     <button onClick={handleClick}>
-      <div className="flex gap-1 text-[12px] font-montserrat border-b border-primary  ">
+      <div className="flex gap-1 border-b border-primary  ">
         <InstagramOutlined />
-        <p className=" font-montserrat">@{un}</p>
+        <p className="">@{un}</p>
       </div>
     </button>
   );

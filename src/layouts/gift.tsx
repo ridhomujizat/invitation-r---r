@@ -13,7 +13,7 @@ import Card from "../components/card";
 import { Fade, Zoom } from "react-awesome-reveal";
 
 const address =
-  "Jl. Kebagusan III No.6 1, RT.1/RW.5, Kebagusan, Ps. Minggu, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12520. No 6.1.R";
+  "Komplek Kohanas 6, No 6.1.R, Jl. Kebagusan III No.6 1, RT.1/RW.5, Kebagusan, Ps. Minggu, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12520.";
 
 const bcaImage = "https://shl.co.id/wp-content/uploads/2022/11/lg-BCA-1.png";
 const norek = [
@@ -58,9 +58,9 @@ export default function Gift() {
           <p className=" text-center font-semibold font-greetFibes text-xl border-b border-primary ">
             Wedding Gift
           </p>
-          <p className=" text-center  w-[80%]">
-            Kehadiran Anda di pernikahan kami sudah sangat berarti. Namun, jika
-            Anda ingin memberikan kado, kami menyediakan Amplop Digital untuk
+          <p className=" text-center">
+            Kehadiran Anda di pernikahan kami sudah sangat berarti. Namun, bila
+            Anda ingin memberikan hadiah, kami menyediakan Alamat serta Amplop Digital untuk
             kemudahan. Terima kasih.
           </p>
           <div className="flex gap-2 items-center">
@@ -109,7 +109,7 @@ export default function Gift() {
                         <p className="text-[10px] text-white font-semibold">
                           {item.norek}
                         </p>
-                        <p className="text-[10px] text-white">A.n {item.an}</p>
+                        <p className="text-[10px] text-white">a.n {item.an}</p>
                       </div>
                       <Button
                         className=" opacity-50"

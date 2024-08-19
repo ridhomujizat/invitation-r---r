@@ -10,7 +10,6 @@ export default {
         river: "url('/bg/river.png')",
       },
       fontFamily: {
-        montserrat: ["Montserrat", "sans-serif"],
         pinyon: ["Pinyon Script", "cursive"],
         milonga: ["Milonga", "serif"],
         cormorant: ["Cormorant", "serif"],

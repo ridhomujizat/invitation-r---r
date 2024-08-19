@@ -42,8 +42,9 @@ export default function Mempelai() {
         </Fade>
         <Fade triggerOnce direction="up">
           <p className="">
-            Alhamdulillah, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dan
-            memberikan doa restu pada acara pernikahan kami:
+            Dengan mengucap syukur atas kehadirat Allah SWT. Dan atas berkat dan
+            rahmat-Nya, dengan hormat kami mengundang Bapak/Ibu/Saudara/i untuk
+            hadir dan memberikan doa restu di acara pernikahan kami:
           </p>
         </Fade>
       </div>

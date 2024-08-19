@@ -76,7 +76,7 @@ export default function Ucapan() {
             <TextArea
               value={ucapan}
               onChange={(e) => setUcapan(e.target.value)}
-              placeholder="Ketik Ucapan buat Rahma dan Ridho"
+              placeholder="Ucapan untuk Rahma dan Ridho"
               autoSize={{ minRows: 3, maxRows: 5 }}
               status={onClicked && !ucapan ? "error" : undefined}
             />
