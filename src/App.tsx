@@ -15,6 +15,7 @@ import useUIStore from "./store/useUiStore";
 import CoverHidden from "./layouts/cover-hidden";
 import MusicPlayer from "./hooks/use-music";
 import useGetParams from "./hooks/use-get-params";
+import usePage from "./hooks/use-page";
 
 function App() {
   const { openCover } = useUIStore((s) => s);
@@ -34,17 +35,18 @@ function App() {
     });
   }, [openCover]);
 
+  const routing = usePage();
+
+  if (routing.isRouting) {
+    return routing.components;
+  }
   return (
     <Theming>
       <div className="flex justify-center md:justify-end items-center h-screen relative">
         <Cover />
         <div className="hidden md:block w-auto relative  h-full overflow-hidden">
-          <img
-            src="rr.png"
-            alt="cover"
-            className="object-cover z-10"
-          />
-           <div className="absolute inset-0 bg-gradient-to-l from-primary to-transparent z-20 opacity-45"></div>
+          <img src="rr.png" alt="cover" className="object-cover z-10" />
+          <div className="absolute inset-0 bg-gradient-to-l from-primary to-transparent z-20 opacity-45"></div>
         </div>
         <section
           id="content"
