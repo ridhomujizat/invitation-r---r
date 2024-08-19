@@ -29,6 +29,7 @@ const norek = [
   },
 ];
 export default function Gift() {
+  const {config} = useGetParams()
   const [visible, setVisible] = useState<string | null>(null);
   const params = useGetParams();
 
@@ -54,9 +55,13 @@ export default function Gift() {
     <Fade direction="up" triggerOnce>
       <div className=" px-10 mt-20">
         <Card className="p-5 py-15 flex flex-col items-center u gap-2">
-          <p className=" text-center font-semibold font-greetFibes text-xl border-b border-primary ">Wedding Gift</p>
+          <p className=" text-center font-semibold font-greetFibes text-xl border-b border-primary ">
+            Wedding Gift
+          </p>
           <p className=" text-center  w-[80%]">
-            Doa Restu Anda merupakan karunia yang sangat berarti bagi kami.
+            Kehadiran Anda di pernikahan kami sudah sangat berarti. Namun, jika
+            Anda ingin memberikan kado, kami menyediakan Amplop Digital untuk
+            kemudahan. Terima kasih.
           </p>
           <div className="flex gap-2 items-center">
             <Button
@@ -71,18 +76,20 @@ export default function Gift() {
               <WalletOutlined style={{ color: "white" }} />
               <p className="text-white text-[10px]">Cashless</p>
             </Button>
-            <Button
-              size="small"
-              type="primary"
-              shape="round"
-              className="mt-3"
-              onClick={() => {
-                setVisible("gift");
-              }}
-            >
-              <GiftOutlined />
-              <p className="text-white text-[10px]">Kirim Kado</p>
-            </Button>
+            {config.hideKado && (
+              <Button
+                size="small"
+                type="primary"
+                shape="round"
+                className="mt-3"
+                onClick={() => {
+                  setVisible("gift");
+                }}
+              >
+                <GiftOutlined />
+                <p className="text-white text-[10px]">Kirim Kado</p>
+              </Button>
+            )}
           </div>
           <Fade duration={500} cascade className="flex flex-col gap-2 w-[80%]">
             {visible === "cashless" && (

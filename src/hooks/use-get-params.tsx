@@ -16,11 +16,12 @@ export default function useGetParams() {
   const config = useMemo(() => {
     const cParams = dataParams?.config || "";
     const hideGift = !cParams.includes("a");
+    const hideKado = !cParams.includes("b");
     return {
       hideGift,
+      hideKado,
     };
   }, [dataParams?.config]);
-
 
   return {
     name: dataParams?.name || "",

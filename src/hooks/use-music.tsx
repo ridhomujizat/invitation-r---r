@@ -33,9 +33,9 @@ export default function MusicPlayer() {
 
       <button onClick={handlePlayPause}>
         {isPlaying ? (
-          <PlayCircleOutlined style={{ fontSize: "30px" }} />
-        ) : (
           <PauseCircleOutlined style={{ fontSize: "30px" }} />
+        ) : (
+          <PlayCircleOutlined style={{ fontSize: "30px" }} />
         )}
       </button>
     </div>
