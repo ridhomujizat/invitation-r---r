@@ -48,7 +48,7 @@ export default function Gift() {
   const sendAllert = (text) => {
     message.success({
       icon: <SmileOutlined />,
-      content: `Terimkasih, ${params.name}!`,
+      content: `Terima kasih, ${params.name}!`,
     });
   };
   return (
