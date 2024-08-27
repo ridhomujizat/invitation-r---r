@@ -114,7 +114,7 @@ export default function Cover() {
               Rahma & Ridho
             </p> */}
             <p className="font-semibold text-white mt-[5rem]">dear :</p>
-            <p className=" text-2xl  my-3 bg-opacity-20 rounded text-white underline capitalize">
+            <p className=" text-2xl  my-3 bg-opacity-20 rounded text-white underline capitalize px-[50px] text-center">
               {params.name}
             </p>
             <div className="mt-[5rem] cursor-pointer" onClick={handleOpenCover}>

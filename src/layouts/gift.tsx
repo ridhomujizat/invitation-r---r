@@ -16,16 +16,25 @@ const address =
   "Komplek Kohanas 6, No 6.1.R, Jl. Kebagusan III No.6 1, RT.1/RW.5, Kebagusan, Ps. Minggu, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12520.";
 
 const bcaImage = "https://shl.co.id/wp-content/uploads/2022/11/lg-BCA-1.png";
+const mandiriImage =  "https://w7.pngwing.com/pngs/1004/749/png-transparent-bank-mandiri-hd-logo-thumbnail.png"
 const norek = [
   {
     bank: "BCA",
     norek: "3780523076",
     an: "Rahma Nurul Khoirayanti",
+    image: bcaImage,
   },
   {
     bank: "BCA",
     norek: "3780595093",
+    image: bcaImage,
     an: "Ridho",
+  },
+  {
+    bank: "Mandiri",
+    norek: "1030007899152",
+    an: "Ridho",
+    image: mandiriImage,
   },
 ];
 export default function Gift() {
@@ -100,7 +109,7 @@ export default function Gift() {
                     className="flex gap-2 items-center bg-primary rounded p-2 w-full"
                   >
                     <img
-                      src={bcaImage}
+                      src={item.image}
                       alt="qr-code"
                       className="w-10 h-10 bg-white rounded"
                     />
@@ -117,7 +126,7 @@ export default function Gift() {
                         shape="circle"
                         size="small"
                         onClick={() => {
-                          navigator.clipboard.writeText(address);
+                          navigator.clipboard.writeText(item.norek);
                           sendAllert("No Rekening");
                           storeToDB(`${item.norek} - ${item.an}`, "cashless");
                         }}

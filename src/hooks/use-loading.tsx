@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 
 const IMAGES = [
+  "/bg/cover.jpg",
+  "/bg/cover.png",
+  "/bg/intro.png",
+  "/bg/intro-blur.png",
   "flower-2.png",
   "flower.png",
   "gapura.png",
@@ -10,34 +14,29 @@ const IMAGES = [
   "rama.png",
   "shinta.png",
   "texture.png",
-  "/bg/cover.jpg",
-  "/bg/cover.png",
-  "/bg/intro.png",
   "river.png",
 ];
 export default function useLoading() {
   const [loading, setLoading] = useState(false);
   useEffect(() => {
-    const loadImage = (image) => {
+    setLoading(true);
+    const promises = IMAGES.map((src) => {
       return new Promise((resolve, reject) => {
-        const loadImg = new Image();
-        loadImg.src = image.url;
-        // wait 2 seconds to simulate loading time
-        loadImg.onload = () =>
-          setTimeout(() => {
-            resolve(image.url);
-          }, 2000);
-
-        loadImg.onerror = (err) => reject(err);
+        const img = new Image();
+        img.src = src;
+        img.onload = resolve;
+        img.onerror = reject;
       });
-    };
+    });
 
-    Promise.all(IMAGES.map((image) => loadImage(image)))
+    Promise.all(promises)
       .then(() => {
-        setLoading(true);
-        console.log("All images loaded successfully");
+        setLoading(false);
       })
-      .catch((err) => console.log("Failed to load images", err));
+      .catch(() => {
+        setLoading(false);
+      });
   }, []);
-  return <div>useLoading</div>;
+
+  return loading;
 }

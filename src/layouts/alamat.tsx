@@ -3,6 +3,7 @@ import { useEffect, type SVGProps } from "react";
 import service from "../service";
 import useUIStore from "../store/useUiStore";
 import { Fade, Zoom } from "react-awesome-reveal";
+import useGetParams from "../hooks/use-get-params";
 
 export function FluentLocation16Regular(props: SVGProps<SVGSVGElement>) {
   return (
@@ -22,11 +23,12 @@ export function FluentLocation16Regular(props: SVGProps<SVGSVGElement>) {
 }
 
 export default function Alamat() {
+  const { name } = useGetParams();
   const { trigger } = useUIStore();
   const openGoogleMaps = () => {
     service
       .post("/maps", {
-        name: "ridho",
+        name: name,
         clicked: true,
       })
       .then((result) => {
@@ -76,8 +78,8 @@ export default function Alamat() {
           </Fade>
           <Fade direction="up" triggerOnce>
             <p className="  mt-3 text-center w-[200px]">
-              Kp. Kebon Kopi RT 002/RW 001 NO 62, Ds. Sukadami,<br /> Kec. Cikarang Selatan,
-              Bekasi, Jawa Barat, 17530
+              Kp. Kebon Kopi RT 002/RW 001 NO 62, Ds. Sukadami,
+              <br /> Kec. Cikarang Selatan, Bekasi, Jawa Barat, 17530
             </p>
           </Fade>
           {/* <Fade direction="up" triggerOnce>

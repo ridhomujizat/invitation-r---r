@@ -16,6 +16,7 @@ import CoverHidden from "./layouts/cover-hidden";
 import MusicPlayer from "./hooks/use-music";
 import useGetParams from "./hooks/use-get-params";
 import usePage from "./hooks/use-page";
+import useLoading from "./hooks/use-loading";
 
 function App() {
   const { openCover } = useUIStore((s) => s);
@@ -35,17 +36,32 @@ function App() {
     });
   }, [openCover]);
 
+  const loading = useLoading();
   const routing = usePage();
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-screen bg-primary">
+        <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 ">
+        </div>
+      </div>
+    );
+  }
 
   if (routing.isRouting) {
     return routing.components;
   }
+
   return (
     <Theming>
       <div className="flex justify-center md:justify-end items-center h-screen relative">
         <Cover />
         <div className="hidden md:block relative  h-full overflow-hidden w-full bg-current z-10">
-          <img src="rr.png" alt="cover" className="object-cover z-10 h-full w-full" />
+          <img
+            src="rr.png"
+            alt="cover"
+            className="object-cover z-10 h-full w-full"
+          />
           {/* <div className="absolute inset-0 bg-gradient-to-l from-primary to-transparent z-20 opacity-45"></div> */}
         </div>
         <section

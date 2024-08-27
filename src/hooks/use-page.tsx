@@ -2,7 +2,7 @@ import React, { useMemo } from "react";
 import CopyName from "../page/copy-name";
 
 export default function usePage() {
-  console.log(window.location);
+  
 
   const route = useMemo(() => {
     let isRouting = false;
