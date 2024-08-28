@@ -17,6 +17,7 @@ import MusicPlayer from "./hooks/use-music";
 import useGetParams from "./hooks/use-get-params";
 import usePage from "./hooks/use-page";
 import useLoading from "./hooks/use-loading";
+import { MailOutlined } from "@ant-design/icons";
 
 function App() {
   const { openCover } = useUIStore((s) => s);
@@ -43,11 +44,7 @@ function App() {
     return (
       <div className="flex justify-center items-center h-screen bg-primary">
         <div className=" absolute t-[50%] l-[50%]">
-          <div className="flex justify-center items-center gap-2 text-white">
-            <p className="text-xl font-pinyon">R</p>
-            <p className="text-xl">|</p>
-            <p className="text-xl font-pinyon">R</p>
-          </div>
+          <MailOutlined className="text-white text-3xl" />
         </div>
         <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 ">
         </div>
