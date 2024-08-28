@@ -42,6 +42,13 @@ function App() {
   if (loading) {
     return (
       <div className="flex justify-center items-center h-screen bg-primary">
+        <div className=" absolute t-[50%] l-[50%]">
+          <div className="flex justify-center items-center gap-2 text-white">
+            <p className="text-xl font-pinyon">R</p>
+            <p className="text-xl">|</p>
+            <p className="text-xl font-pinyon">R</p>
+          </div>
+        </div>
         <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 ">
         </div>
       </div>
